@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  ServiceChargingSystem:
+    build:
+      context: ./Banhcafe.Microservices.ServiceChargingSystem
+      dockerfile: src/Api/Dockerfile
+    image: ServiceChargingSystem
+    container_name: ServiceChargingSystem
+    environment:
+      ASPNETCORE_ENVIRONMENT: development
+    ports:
+      - "5000:5000"
+    network_mode: bridge
