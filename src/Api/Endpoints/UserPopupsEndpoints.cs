@@ -65,7 +65,7 @@ public static class PopupsEndpoints
 
         _ = backOfficeEndpoints
             .MapPost(
-                "/popups",
+                "/popups/hide",
                 static async (
                     IFeatureManager features,
                     IMediator mediator,
