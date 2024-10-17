@@ -91,9 +91,9 @@ using Serilog;
     #region endpoints
     app.MapHealthChecks("/health").AllowAnonymous();
     app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
-    app.AddPopupsEndpoints();
-    app.AddSubscriptionsEndpoints();
-    app.AddServicesEndpoints();
+    app.AddUserPopupsEndpoints();
+    app.AddUserSubscriptionsEndpoints();
+    app.AddUserServicesEndpoints();
     #endregion endpoints
 
     if (app.Environment.IsDevelopment())

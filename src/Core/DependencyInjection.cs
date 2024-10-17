@@ -1,8 +1,9 @@
 using System.Reflection;
-using System.Security.Cryptography;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Validators;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Validators;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,12 +23,13 @@ public static class DependencyInjection
             );
         });
 
-        _ = services.AddAutoMapper(c => c.AddProfile(new Popups.Mapper.AutoMapperProfile()));
-        _ = services.AddAutoMapper(c => c.AddProfile(new Subscriptions.Mapper.AutoMapperProfile()));
-        _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new UserPopups.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new UserSubscriptions.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new UserServices.Mapper.AutoMapperProfile()));
 
         // Create validators
-        services.AddScoped<IValidator<CreateSubscriptions>, CreateSubscriptionsValidator>();
+        services.AddScoped<IValidator<CreateUserSubscriptions>, CreateUserSubscriptionsValidator>();
+        services.AddScoped<IValidator<HideUserPopup>, HideUserPopupsValidator> ();
 
         return services;
     }

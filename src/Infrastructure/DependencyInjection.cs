@@ -1,11 +1,11 @@
 ﻿using System.Net;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
@@ -39,24 +39,24 @@ public static class DependencyInjection
             .ConfigurePrimaryHttpMessageHandler(PrimaryHttpMessageHandler)
             .AddResilienceHandler("db-client-pipeline", BasicHttpClientResiliencePipeline);
 
-        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<PopupsBase>>>(
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<UserPopupsBase>>>(
             settingsAction: (sp) => new() { },
             httpClientName: "DBClient"
         );
 
-        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<SubscriptionsBase>>> (
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<UserSubscriptionsBase>>> (
             settingsAction: (sp) => new() {},
             httpClientName: "DBClient"
         );
 
-        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<ServicesBase>>>(
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<UserServicesBase>>>(
             settingsAction: (sp) => new() {},
             httpClientName: "DBClient"
         );
 
-        services.AddScoped<IPopupsRepository, PopupsRepository>();
-        services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
-        services.AddScoped<IServicesRepository, ServicesRepository>();
+        services.AddScoped<IUserPopupsRepository, UserPopupsRepository>();
+        services.AddScoped<IUserSubscriptionsRepository, UserSubscriptionsRepository>();
+        services.AddScoped<IUserServicesRepository, UserServicesRepository>();
 
         return services;
     }
