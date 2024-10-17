@@ -1,6 +1,13 @@
 ﻿using System.Net;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Http.Resilience;
@@ -23,12 +30,33 @@ public static class DependencyInjection
                 static (sp, client) =>
                 {
                     var dbSettings = sp.GetRequiredService<IOptionsMonitor<DatabaseSettings>>();
-                    client.BaseAddress = new Uri(dbSettings.CurrentValue.DatabaseApiUrl);
+                    client.BaseAddress = new Uri(
+                        dbSettings.Get(DatabaseSettingsInstances.SQL).DatabaseApiUrl
+                    );
                     client.Timeout = TimeSpan.FromMinutes(3);
                 }
             )
             .ConfigurePrimaryHttpMessageHandler(PrimaryHttpMessageHandler)
             .AddResilienceHandler("db-client-pipeline", BasicHttpClientResiliencePipeline);
+
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<PopupsBase>>>(
+            settingsAction: (sp) => new() { },
+            httpClientName: "DBClient"
+        );
+
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<SubscriptionsBase>>> (
+            settingsAction: (sp) => new() {},
+            httpClientName: "DBClient"
+        );
+
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<ServicesBase>>>(
+            settingsAction: (sp) => new() {},
+            httpClientName: "DBClient"
+        );
+
+        services.AddScoped<IPopupsRepository, PopupsRepository>();
+        services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
+        services.AddScoped<IServicesRepository, ServicesRepository>();
 
         return services;
     }

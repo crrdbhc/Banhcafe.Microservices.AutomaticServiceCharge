@@ -1,5 +1,9 @@
 using System.Reflection;
+using System.Security.Cryptography;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Subscriptions.Validators;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +21,13 @@ public static class DependencyInjection
                 typeof(UnhandledExceptionBehaviour<,>)
             );
         });
+
+        _ = services.AddAutoMapper(c => c.AddProfile(new Popups.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new Subscriptions.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
+
+        // Create validators
+        services.AddScoped<IValidator<CreateSubscriptions>, CreateSubscriptionsValidator>();
 
         return services;
     }

@@ -10,8 +10,8 @@ using Microsoft.FeatureManagement;
 using Serilog;
 
 
-try
-{
+//try
+//{
     var builder = WebApplication.CreateBuilder(args);
 
     builder
@@ -41,8 +41,14 @@ try
     builder.Host.UseNacosConfig(section: "NacosConfig");
 
     builder.Services.Configure<DatabaseSettings>(
-        builder.Configuration.GetSection(nameof(DatabaseSettings))
+        DatabaseSettingsInstances.SQL,
+        builder.Configuration.GetSection(DatabaseSettingsInstances.SQL)
     );
+
+    //builder.Services.Configure<DatabaseSettings>(
+    //    builder.Configuration.GetSection(nameof(DatabaseSettings))
+    //);
+
     builder.Services.Configure<JWTSettings>(
         JWTSettingsSections.External,
         builder.Configuration.GetSection(JWTSettingsSections.External)
@@ -85,6 +91,9 @@ try
     #region endpoints
     app.MapHealthChecks("/health").AllowAnonymous();
     app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+    app.AddPopupsEndpoints();
+    app.AddSubscriptionsEndpoints();
+    app.AddServicesEndpoints();
     #endregion endpoints
 
     if (app.Environment.IsDevelopment())
@@ -105,15 +114,15 @@ try
     }
 
     app.Run();
-}
-catch (Exception ex)
-{
-    Log.Fatal(ex, "Unhandled exception");
-}
-finally
-{
-    Log.Information("Shutdown");
-    Log.CloseAndFlush();
-}
+//}
+//catch (Exception ex)
+//{
+//    Log.Fatal(ex, "Unhandled exception");
+//}
+//finally
+//{
+//    Log.Information("Shutdown");
+//    Log.CloseAndFlush();
+//}
 
 public partial class Program { }
