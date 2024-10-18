@@ -8,7 +8,7 @@ using Microsoft.FeatureManagement.Mvc;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints;
 
-public static class ServicesEndpoints {
+public static class UserServicesEndpoints {
     public static IEndpointRouteBuilder AddUserServicesEndpoints(this IEndpointRouteBuilder endpoints)
     {
         var versionSet = endpoints

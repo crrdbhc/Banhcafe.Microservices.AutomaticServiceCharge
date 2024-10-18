@@ -26,6 +26,7 @@ public static class DependencyInjection
         _ = services.AddAutoMapper(c => c.AddProfile(new UserPopups.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new UserSubscriptions.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new UserServices.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
 
         // Create validators
         services.AddScoped<IValidator<CreateUserSubscriptions>, CreateUserSubscriptionsValidator>();

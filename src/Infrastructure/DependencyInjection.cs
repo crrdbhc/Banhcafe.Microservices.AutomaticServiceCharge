@@ -1,5 +1,7 @@
 ﻿using System.Net;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Models;
@@ -54,9 +56,15 @@ public static class DependencyInjection
             httpClientName: "DBClient"
         );
 
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<ServicesBase>>>(
+            settingsAction: (sp) => new() {},
+            httpClientName: "DBClient"
+        );
+
         services.AddScoped<IUserPopupsRepository, UserPopupsRepository>();
         services.AddScoped<IUserSubscriptionsRepository, UserSubscriptionsRepository>();
         services.AddScoped<IUserServicesRepository, UserServicesRepository>();
+        services.AddScoped<IServicesRepository, ServicesRepository>();
 
         return services;
     }
