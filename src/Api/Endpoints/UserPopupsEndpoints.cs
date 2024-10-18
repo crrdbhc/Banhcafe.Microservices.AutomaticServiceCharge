@@ -11,7 +11,7 @@ using Microsoft.FeatureManagement.Mvc;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints;
 
-public static class PopupsEndpoints
+public static class UserPopupsEndpoints
 {
     public static IEndpointRouteBuilder AddUserPopupsEndpoints(this IEndpointRouteBuilder endpoints)
     {
