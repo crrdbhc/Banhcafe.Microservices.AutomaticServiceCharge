@@ -17,6 +17,11 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Popups\Commands\Create\" />
+    <Folder Include="Popups\Commands\Delete\" />
+    <Folder Include="Popups\Commands\Update\" />
+    <Folder Include="Popups\Validators\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,10 @@
 using System.Reflection;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Validators;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Validators;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +22,15 @@ public static class DependencyInjection
                 typeof(UnhandledExceptionBehaviour<,>)
             );
         });
+
+        _ = services.AddAutoMapper(c => c.AddProfile(new UserPopups.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new UserSubscriptions.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new UserServices.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
+
+        // Create validators
+        services.AddScoped<IValidator<CreateUserSubscriptions>, CreateUserSubscriptionsValidator>();
+        services.AddScoped<IValidator<HideUserPopup>, HideUserPopupsValidator> ();
 
         return services;
     }

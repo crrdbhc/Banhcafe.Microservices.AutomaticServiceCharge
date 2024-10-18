@@ -1,10 +1,11 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
 using BANHCAFE.Cross.DBConnection;
 using Microsoft.Extensions.Logging;
 using Refit;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
+using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
+
 internal static class DbConnectionExtensions
 {
     public static async Task<IEnumerable<TResponse>> Process<TRequest, TResponse>(
