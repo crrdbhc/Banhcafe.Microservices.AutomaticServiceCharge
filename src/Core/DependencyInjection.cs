@@ -27,10 +27,11 @@ public static class DependencyInjection
         _ = services.AddAutoMapper(c => c.AddProfile(new UserSubscriptions.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new UserServices.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new Popups.Mapper.AutoMapperProfile()));
 
         // Create validators
         services.AddScoped<IValidator<CreateUserSubscriptions>, CreateUserSubscriptionsValidator>();
-        services.AddScoped<IValidator<HideUserPopup>, HideUserPopupsValidator> ();
+        services.AddScoped<IValidator<HideUserPopup>, HideUserPopupsValidator>();
 
         return services;
     }
