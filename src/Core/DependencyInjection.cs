@@ -1,5 +1,7 @@
 using System.Reflection;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Validators;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Validators;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
@@ -28,10 +30,12 @@ public static class DependencyInjection
         _ = services.AddAutoMapper(c => c.AddProfile(new UserServices.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new Popups.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new PopupTypes.Mapper.AutoMapperProfile()));
 
         // Create validators
         services.AddScoped<IValidator<CreateUserSubscriptions>, CreateUserSubscriptionsValidator>();
         services.AddScoped<IValidator<HideUserPopup>, HideUserPopupsValidator>();
+        services.AddScoped<IValidator<CreatePopupType>, CreatePopupTypesValidator>();
 
         return services;
     }

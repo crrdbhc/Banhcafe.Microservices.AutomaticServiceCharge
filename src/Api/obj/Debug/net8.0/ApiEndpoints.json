@@ -152,6 +152,103 @@
     "EndpointName": "HideUserPopup"
   },
   {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddPopupTypesEndpoints\u003Eb__0_0",
+    "RelativePath": "backOffice/popups/types",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "terminalId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Popups"
+    ],
+    "EndpointName": "GetAllPopupTypes"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddPopupTypesEndpoints\u003Eb__0_1",
+    "RelativePath": "backOffice/popups/types",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create.CreatePopupTypeCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Popups"
+    ],
+    "EndpointName": "CreatePopupTypes"
+  },
+  {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/services",
