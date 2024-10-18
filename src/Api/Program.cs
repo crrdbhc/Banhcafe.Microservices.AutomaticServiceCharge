@@ -96,6 +96,7 @@ using Serilog;
     app.AddUserServicesEndpoints();
     app.AddServicesEndpoints();
     app.AddPopupsEndpoints();
+    app.AddPopupTypesEndpoints();
     #endregion endpoints
 
     if (app.Environment.IsDevelopment())
