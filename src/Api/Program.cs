@@ -97,6 +97,8 @@ using Serilog;
     app.AddServicesEndpoints();
     app.AddPopupsEndpoints();
     app.AddPopupTypesEndpoints();
+    app.AddCurrenciesEndpoints();
+    app.AddRenewalTypesEndpoints();
     #endregion endpoints
 
     if (app.Environment.IsDevelopment())

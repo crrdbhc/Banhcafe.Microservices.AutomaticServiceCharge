@@ -1,10 +1,14 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
@@ -76,12 +80,24 @@ public static class DependencyInjection
             httpClientName: "DBClient"
         );
 
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<CurrenciesBase>>>(
+            settingsAction: (sp) => new() {},
+            httpClientName: "DBClient"
+        );
+
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<RenewalTypesBase>>>(
+            settingsAction: (sp) => new() {},
+            httpClientName: "DBClient"
+        );
+
         services.AddScoped<IUserPopupsRepository, UserPopupsRepository>();
         services.AddScoped<IUserSubscriptionsRepository, UserSubscriptionsRepository>();
         services.AddScoped<IUserServicesRepository, UserServicesRepository>();
         services.AddScoped<IServicesRepository, ServicesRepository>();
         services.AddScoped<IPopupsRepository, PopupsRepository>();
         services.AddScoped<IPopupTypesRepository, PopupTypesRepository>();
+        services.AddScoped<ICurrenciesRepository, CurrenciesRepository>();
+        services.AddScoped<IRenewalTypesRepository, RenewalTypesRepository>();
 
         return services;
     }

@@ -1,3 +1,4 @@
+using System.Net.Security;
 using System.Reflection;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
@@ -35,6 +36,8 @@ public static class DependencyInjection
         _ = services.AddAutoMapper(c => c.AddProfile(new Services.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new Popups.Mapper.AutoMapperProfile()));
         _ = services.AddAutoMapper(c => c.AddProfile(new PopupTypes.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new Currencies.Mapper.AutoMapperProfile()));
+        _ = services.AddAutoMapper(c => c.AddProfile(new RenewalTypes.Mapper.AutoMapperProfile()));
 
         // Create validators
         services.AddScoped<IValidator<CreateUserSubscriptions>, CreateUserSubscriptionsValidator>();

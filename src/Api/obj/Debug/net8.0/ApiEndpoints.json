@@ -1,5 +1,55 @@
 [
   {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.CurrenciesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddCurrenciesEndpoints\u003Eb__0_0",
+    "RelativePath": "backOffice/currencies/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "terminalId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Currencies"
+    ],
+    "EndpointName": "GetCurrencies"
+  },
+  {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/popups",
@@ -435,6 +485,56 @@
       "PopupTypes"
     ],
     "EndpointName": "UpdatePopupType"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.RenewalTypesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddRenewalTypesEndpoints\u003Eb__0_0",
+    "RelativePath": "backOffice/RenewalTypes/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "terminalId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "RenewalTypes"
+    ],
+    "EndpointName": "GetRenewalTypes"
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
