@@ -10,5 +10,6 @@ public sealed class AutoMapperProfile: Profile
     {
         CreateMap<ListServicesQuery, ViewServicesDto>();
         CreateMap<ListAllServicesQuery, ViewAllServicesDto>();
+        CreateMap<CreateServices, CreateServicesDto>();
     }
 }

@@ -300,6 +300,53 @@
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddServicesEndpoints\u003Eb__0_2",
+    "RelativePath": "backOffice/services",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Services"
+    ],
+    "EndpointName": "CreateServices"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/services/{serviceId}",
     "HttpMethod": "GET",

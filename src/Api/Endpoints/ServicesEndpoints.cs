@@ -1,5 +1,7 @@
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -87,6 +89,38 @@ public static class ServicesEndpoints {
             .WithDisplayName("GetServiceById")
             .WithName("GetServiceById")
             .WithMetadata(new FeatureGateAttribute("BOF-show_service_by_id"))
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+        
+        _ = backOfficeEndpoints
+            .MapPost(
+                "/services",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    CreateServiceCommand request
+                ) => 
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);
+                }
+            )
+            .WithDisplayName("CreateServices")
+            .WithName("CreateServices")
+            .WithMetadata(new FeatureGateAttribute("BOF-create_services"))
+            .Produces<ApiResponse<CreateServiceCommand>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem();

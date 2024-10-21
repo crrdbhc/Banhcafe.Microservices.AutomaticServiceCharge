@@ -5,6 +5,7 @@ using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
 using BANHCAFE.Cross.DBConnection;
+using Microsoft.Extensions.Http.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -22,6 +23,8 @@ public class ServicesRepository (
 
     internal const string QueryCommand = "SP_SEL_ALLSERVICEDATABYID";
     internal const string GetAllCommand = "SP_SELLALL_SERVICETYPES";
+    internal const string CreateCommand = "SP_INS_SERVICETYPE";
+    // internal const string CreateCommand = "SP_PRUEBAS";
 
     public async Task<IEnumerable<ServicesBase>> ListAll(
         ViewAllServicesDto dto,
@@ -33,6 +36,10 @@ public class ServicesRepository (
             Scheme = _dbSettings.SchemeNameServ,
             Database = _dbSettings.DatabaseName,
             StoredProcedure = GetAllCommand,
+            // Parameters = new Dictionary<string, object>
+            // {
+            //     { "@jsonFile", JsonSerializer.Serialize(dto) }
+            // }
             Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
                 JsonSerializer.Serialize(
                     dto,
@@ -113,8 +120,33 @@ public class ServicesRepository (
         return response.FirstOrDefault();
     }
 
-    public Task<ServicesBase> Create(CreateServicesDto dto = null, CancellationToken cancellationToken = default)
+    public async Task<ServicesBase> Create (
+        CreateServicesDto dto,
+        CancellationToken cancellationToken = default
+    )
     {
-        throw new NotImplementedException();
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeNameServ,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = CreateCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
     }
 }

@@ -1,4 +1,5 @@
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using MediatR.NotificationPublishers;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
 
@@ -20,6 +21,7 @@ public class ServicesBase: BaseQueryResponseDto
     public decimal? TotalAmount { get; set; }
     public int? Duration { get; set; }
     public int? PaymentDay { get; set; }
+    public string? Response { get; set; }
 }
 
 public class ViewServicesDto: IBaseQueryDto 
@@ -39,4 +41,47 @@ public class ViewAllServicesDto: IBaseQueryDto
 
 }
 
-public class CreateServicesDto {}
+public class PaymentFrequencies 
+{
+    public int? PaymentFrequencyId { get; set; }
+    public int? UserTypeId { get; set; }
+    public decimal? Amount { get; set; }
+    public decimal? TotalAmount { get; set; }
+    public int? Duration { get; set; }
+}
+
+public class Subscriptions 
+{
+    public int? SubscriptionId { get; set; }
+    public int? Coverage { get; set; }
+    public List<PaymentFrequencies> PaymentFrequencies { get; set; }
+
+}
+
+public class ServiceData {
+    public string? ServiceName { get; set; }
+    public string? ServiceDescription { get; set; }
+    public int? PaymentTypeId { get; set; }  
+    public int? DayLimit { get; set; }
+    public int? PaymentDay { get; set; }
+    public string? CollectionTime { get; set; }
+    public List<Subscriptions> Subscriptions { get; set; } 
+}
+
+
+
+// public class ServiceData {
+//     public string? Name { get; set; }
+//     public string? Description { get; set; }
+//     public int? PaymentTypeId { get; set; }  
+//     public int? DayLlimit { get; set; }
+//     public string? CollectionTime { get; set; }
+// }
+
+public class CreateServices {
+    public ServiceData? JsonFile { get; set; }
+}
+
+public class CreateServicesDto : CreateServices, IBaseCreateDto {
+    public int CreatorId { get; set; }
+}
