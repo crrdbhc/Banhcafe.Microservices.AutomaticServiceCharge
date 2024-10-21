@@ -1,5 +1,3 @@
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
 using System.Text.Json;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
@@ -24,6 +22,7 @@ public class PopupTypesRepository(
 
     internal const string GetAllCommand = "SP_SELALL_POPUPTYPES";
     internal const string CreateCommand = "SP_INS_POPUPTYPES";
+    internal const string UpdateCommand = "SP_UPD_POPUPTYPE";
 
     public async Task<IEnumerable<PopupTypesBase>> ListAll (
         ViewAllPopupTypesDto dto,
@@ -114,8 +113,43 @@ public class PopupTypesRepository(
         var response = await api.Process(logger, request, cancellationToken);
         return response.FirstOrDefault();        
     }
+    public async Task<PopupTypesBase> Update(
+        UpdatePopupTypesDto dto,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeNameCat,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = UpdateCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
+    }
 
     public Task<IEnumerable<PopupTypesBase>> List(ViewAllPopupTypesDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+
+    public Task<PopupTypesBase> Delete(DeletePopupTypesDto dto, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

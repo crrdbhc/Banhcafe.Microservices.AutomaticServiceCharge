@@ -113,4 +113,14 @@ public class UserPopupsRepository(
         var response = await api.Process(logger, request, cancellationToken);
         return response.FirstOrDefault();
     }
+
+    public Task<UserPopupsBase> Update(UpdateUserPopupsDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<UserPopupsBase> Delete(DeleteUserPopupsDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
 }

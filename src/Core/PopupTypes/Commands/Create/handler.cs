@@ -8,7 +8,7 @@ using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create
+namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create
 {
     public sealed class CreatePopupTypeCommand: IRequest<ApiResponse<PopupTypesBase>>
     {

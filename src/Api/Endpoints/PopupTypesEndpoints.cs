@@ -1,8 +1,8 @@
-using System.Security.Cryptography;
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Update;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +24,7 @@ public static class PopupTypesEndpoints
         var backOfficeEndpoints = endpoints
             .MapGroup("/backOffice/popups")
             .AddEndpointFilter<FeatureGateEndpointFilter>()
-            .WithTags("Popups")
+            .WithTags("PopupTypes")
             .WithApiVersionSet(versionSet)
             .RequireAuthorization(AuthenticationPolicy.BackOffice);
         
@@ -88,6 +88,38 @@ public static class PopupTypesEndpoints
             .WithDisplayName("CreatePopupTypes")
             .WithName("CreatePopupTypes")
             .WithMetadata(new FeatureGateAttribute("BOF-hide_user_popup"))
+            .Produces<ApiResponse<CreatePopupTypeCommand>>()
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+
+        _ = backOfficeEndpoints
+            .MapPut(
+                "types",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    UpdatePopupTypesCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);
+                }
+            )
+            .WithDisplayName("UpdatePopupType")
+            .WithName("UpdatePopupType")
+            .WithMetadata(new FeatureGateAttribute("BOF-update_popup_type"))
             .Produces<ApiResponse<CreatePopupTypeCommand>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)

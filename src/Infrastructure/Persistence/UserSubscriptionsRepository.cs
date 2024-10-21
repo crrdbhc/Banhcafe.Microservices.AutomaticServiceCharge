@@ -112,4 +112,14 @@ public class UserSubscriptionsRepository (
         var response = await api.Process(logger, request, cancellationToken);
         return response.FirstOrDefault();
     }
+
+    public Task<UserSubscriptionsBase> Update(UpdateUserSubscriptionsDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<UserSubscriptionsBase> Delete(DeleteUserSubscriptionsDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -11,5 +11,8 @@ public sealed class AutoMapperProfile: Profile
         CreateMap<ListServicesQuery, ViewServicesDto>();
         CreateMap<ListAllServicesQuery, ViewAllServicesDto>();
         CreateMap<CreateServices, CreateServicesDto>();
+        CreateMap<UpdateService, UpdateServicesDto>();
+        CreateMap<UpdateServicesSubscriptions, UpdateServiceSubscriptionsDto>();
+        CreateMap<UpdateSubscriptionsPayments, UpdateSubscriptionsPaymentsDto>();
     }
 }

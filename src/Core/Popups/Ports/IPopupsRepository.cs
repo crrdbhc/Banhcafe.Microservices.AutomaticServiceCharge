@@ -3,7 +3,7 @@ using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports
 {
-    public interface IPopupsRepository: IGenericRepository<PopupsBase, ViewPopupsDto, CreatePopupsDto>
+    public interface IPopupsRepository: IGenericRepository<PopupsBase, ViewPopupsDto, CreatePopupsDto, UpdatePopupsDto, DeletePopupsDto>
     {
         Task<IEnumerable<PopupsBase>> ListAll (
             ViewAllPopupsDto filtersDto,
@@ -19,5 +19,19 @@ namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports
             CreatePopupsDto dto,
             CancellationToken cancellationToken
         );
+
+        Task<PopupsBase> Update(
+            UpdatePopupsDto dto,
+            CancellationToken cancellationToken
+        );
+
+        Task<PopupsBase> Update(
+            UpdatePopupContentDto dto,
+            CancellationToken cancellationToken
+        );
+
+        //Task<PopupsBase> Delete(
+        //    DeletePopupTypesDto dto, CancellationToken cancellationToken
+        //);
     }
 }

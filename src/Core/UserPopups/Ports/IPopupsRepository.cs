@@ -3,7 +3,7 @@ using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports
 {
-    public interface IUserPopupsRepository: IGenericRepository<UserPopupsBase, ViewUserPopupsDto, HideUserPopupDto>
+    public interface IUserPopupsRepository: IGenericRepository<UserPopupsBase, ViewUserPopupsDto, HideUserPopupDto, UpdateUserPopupsDto, DeleteUserPopupsDto>
     {
         Task<UserPopupsBase> Create(HideUserPopupDto dto, CancellationToken cancellationToken);
         Task<IEnumerable<UserPopupsBase>> List(

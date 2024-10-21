@@ -75,3 +75,56 @@ public class CreateServices {
 public class CreateServicesDto : CreateServices, IBaseCreateDto {
     public int CreatorId { get; set; }
 }
+
+public class UpdateService 
+{
+    public int ServiceId { get; set; }
+    public string? Name { get; set; }
+    public string? Description { get; set; }
+    public int? DayLimit { get; set; }
+    public int? PaymentTypeId { get; set; }
+    public string? CollectionTime { get; set; }
+    public int? CurrencyTypeId { get; set; }
+    public int? RenewalTypeId { get; set; }
+    public int? PaymentDay { get; set; }
+
+}
+
+public class UpdateServicesDto : UpdateService, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+
+public class UpdateServicesSubscriptions
+{
+    public int SubscriptionServiceId { get; set; }
+    public int? Coverage { get; set; }
+}
+
+public class UpdateServiceSubscriptionsDto : UpdateServicesSubscriptions, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class UpdateSubscriptionsPayments
+{
+    public int SubscriptionPaymentId { get; set; }
+    public int SubscriptionServiceId { get; set; }
+    public int? PaymentFrequencyId { get; set; }
+    public int? UserTypeId { get; set; }
+    public decimal? Amount { get; set; }
+    public decimal? TotalAmount { get; set; }
+    public int? Duration { get; set; }
+}
+
+public class UpdateSubscriptionsPaymentsDto : UpdateSubscriptionsPayments, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class DeleteService { }
+public class DeleteServicessDto : DeleteService, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
+}

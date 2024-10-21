@@ -10,6 +10,7 @@ public class PopupsBase: BaseQueryResponseDto
     public string? PopupType { get; set; }
     public bool? IsActive { get; set; }
     public string? PopupContentType { get; set; }
+    public int? PopupContentId { get; set; }
     public string? Content { get; set; }
     public int? OrderContent { get; set; }
     public string? Response { get; set; }
@@ -53,4 +54,44 @@ public class CreatePopup {
 public class CreatePopupsDto: CreatePopup, IBaseCreateDto 
 {
     public int CreatorId { get; set; }
+}
+
+public class UpdatePopup 
+{
+    public int? PopupId { get; set; }
+    public string? PopupName { get; set; }
+    public int? PopupTypeId { set; get; }
+    public bool? IsActive { get; set; }
+    public int? LimitDaysHidden { get; set; }
+}
+
+public class UpdatePopupContent 
+{
+    public int PopupContentId { get; set; }
+    public int? PopupContentTypeId { get; set; }
+    public string? Content { get; set; }
+    public int? OrderContent { get; set; }
+}
+
+public class UpdatePopupsDto : UpdatePopup, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class UpdatePopupContentDto : UpdatePopupContent, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class DeletePopup { }
+public class DeletePopupContent { }
+
+public class DeletePopupsDto : DeletePopup, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
+}
+
+public class DeletePopupContentDto : DeletePopupContent, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
 }

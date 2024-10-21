@@ -98,6 +98,53 @@
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddPopupsEndpoints\u003Eb__0_3",
+    "RelativePath": "backOffice/popups",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Update.UpdatePopupsCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Popups"
+    ],
+    "EndpointName": "UpdatePopup"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/popups/{popupId}",
     "HttpMethod": "GET",
@@ -150,6 +197,53 @@
       "Popups"
     ],
     "EndpointName": "GetPopupById"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddPopupsEndpoints\u003Eb__0_4",
+    "RelativePath": "backOffice/popups/content",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Update.UpdatePopupContentCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Popups"
+    ],
+    "EndpointName": "UpdatePopupContent"
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserPopupsEndpoints\u002B\u003C\u003Ec",
@@ -244,7 +338,7 @@
       }
     ],
     "Tags": [
-      "Popups"
+      "PopupTypes"
     ],
     "EndpointName": "GetAllPopupTypes"
   },
@@ -258,7 +352,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create.CreatePopupTypeCommand",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand",
         "IsRequired": true
       },
       {
@@ -269,7 +363,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -291,9 +385,56 @@
       }
     ],
     "Tags": [
-      "Popups"
+      "PopupTypes"
     ],
     "EndpointName": "CreatePopupTypes"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddPopupTypesEndpoints\u003Eb__0_2",
+    "RelativePath": "backOffice/popups/types",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Update.UpdatePopupTypesCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "PopupTypes"
+    ],
+    "EndpointName": "UpdatePopupType"
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
@@ -394,6 +535,53 @@
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddServicesEndpoints\u003Eb__0_3",
+    "RelativePath": "backOffice/services",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update.UpdateServicesCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Services"
+    ],
+    "EndpointName": "UpdateService"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/services/{serviceId}",
     "HttpMethod": "GET",
@@ -446,6 +634,100 @@
       "Services"
     ],
     "EndpointName": "GetServiceById"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddServicesEndpoints\u003Eb__0_4",
+    "RelativePath": "backOffice/services/subscriptions",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update.UpdateServicesSubscriptionsCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Services"
+    ],
+    "EndpointName": "UpdateServiceSubscriptions"
+  },
+  {
+    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CAddServicesEndpoints\u003Eb__0_5",
+    "RelativePath": "backOffice/services/subscriptions/payments",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update.UpdateSubscriptionPaymentsCommand",
+        "IsRequired": true
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Services"
+    ],
+    "EndpointName": "UpdateSubscriptionPayments"
   },
   {
     "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserSubscriptionsEndpoints\u002B\u003C\u003Ec",

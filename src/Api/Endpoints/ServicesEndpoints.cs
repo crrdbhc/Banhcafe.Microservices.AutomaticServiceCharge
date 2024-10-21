@@ -1,7 +1,9 @@
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -125,6 +127,102 @@ public static class ServicesEndpoints {
             .ProducesProblem(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem();
         
+        _ = backOfficeEndpoints
+            .MapPut(
+                "/services",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    UpdateServicesCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0 )
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0 )
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);    
+                }
+            )
+            .WithDisplayName("UpdateService")
+            .WithName("UpdateService")
+            .WithMetadata(new FeatureGateAttribute("BOF-update_service"))
+            .Produces<ApiResponse<CreateServiceCommand>>()
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+
+        _ = backOfficeEndpoints
+            .MapPut(
+                "/services/subscriptions",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    UpdateServicesSubscriptionsCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+                    
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);
+                }
+            )
+            .WithDisplayName("UpdateServiceSubscriptions")
+            .WithName("UpdateServiceSubscriptions")
+            .WithMetadata(new FeatureGateAttribute("BOF-update_service_subscription"))
+            .Produces<ApiResponse<CreateServiceCommand>>()
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+
+        _ = backOfficeEndpoints
+            .MapPut(
+                "/services/subscriptions/payments",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    UpdateSubscriptionPaymentsCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);
+                }
+            )
+            .WithDisplayName("UpdateSubscriptionPayments")
+            .WithName("UpdateSubscriptionPayments")
+            .WithMetadata(new FeatureGateAttribute("BOF-update_subscription_payments"))
+            .Produces<ApiResponse<CreateServiceCommand>>()
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+
         return endpoints;
     }
 }

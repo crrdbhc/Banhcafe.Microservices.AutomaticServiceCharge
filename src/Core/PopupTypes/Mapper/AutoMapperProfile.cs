@@ -10,5 +10,6 @@ public sealed class AutoMapperProfile: Profile
     {
         CreateMap<ListAllPopupTypesQuery, ViewAllPopupTypesDto>();
         CreateMap<CreatePopupType, CreatePopupTypesDto>();
+        CreateMap<UpdatePopupType, UpdatePopupTypesDto>();
     }
 }

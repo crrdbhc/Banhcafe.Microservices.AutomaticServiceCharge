@@ -32,3 +32,16 @@ public class HideUserPopupDto: HideUserPopup, IBaseCreateDto
 {
     public int CreatorId { get; set; }
 }
+
+public class UpdateUserPopup { }
+
+public class UpdateUserPopupsDto : UpdateUserPopup, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class DeleteUserPopup { }
+public class DeleteUserPopupsDto : DeleteUserPopup, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
+}

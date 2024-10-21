@@ -3,7 +3,7 @@ using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
 
 namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports
 {   
-    public interface IServicesRepository: IGenericRepository<ServicesBase, ViewServicesDto, CreateServicesDto>
+    public interface IServicesRepository: IGenericRepository<ServicesBase, ViewServicesDto, CreateServicesDto, UpdateServicesDto, DeleteServicessDto>
     {
         Task<IEnumerable<ServicesBase>> ListAll (
             ViewAllServicesDto filtersDto,
@@ -19,5 +19,21 @@ namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports
             CreateServicesDto dto,
             CancellationToken cancellationToken
         );
+
+        Task<ServicesBase> Update(
+            UpdateServicesDto dto,
+            CancellationToken cancellationToken
+        );
+
+        Task<ServicesBase> Update(
+            UpdateServiceSubscriptionsDto dto,
+            CancellationToken cancellationToken
+        );
+
+        Task<ServicesBase> Update(
+            UpdateSubscriptionsPaymentsDto dto,
+            CancellationToken cancellationToken
+        );
     }
+
 }

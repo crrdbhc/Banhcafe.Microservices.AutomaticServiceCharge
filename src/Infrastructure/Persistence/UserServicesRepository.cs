@@ -86,4 +86,14 @@ public class UserServicesRepository (
     {
         throw new NotImplementedException();
     }
+
+    public Task<UserServicesBase> Update(UpdateUserServicesDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<UserServicesBase> Delete(DeleteUserServicesDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
 }

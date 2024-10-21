@@ -25,3 +25,21 @@ public class CreatePopupTypesDto: CreatePopupType, IBaseCreateDto
 {
     public int CreatorId { get; set; }
 }
+
+public class UpdatePopupType
+{
+    public int? PopupTypeId { get; set; }
+    public string? PopupTypeName { get; set; }
+}
+
+public class UpdatePopupTypesDto : UpdatePopupType, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class DeletePopupType { }
+
+public class DeletePopupTypesDto : DeletePopupType, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
+}

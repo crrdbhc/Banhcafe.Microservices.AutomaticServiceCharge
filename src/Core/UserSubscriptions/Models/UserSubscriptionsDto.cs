@@ -34,3 +34,16 @@ public class CreateUserSubscriptions {
 public class CreateUserSubscriptionsDto: CreateUserSubscriptions, IBaseCreateDto {
     public int CreatorId { get; set; }
 }
+
+public class UpdateUserSubscription { }
+
+public class UpdateUserSubscriptionsDto : UpdateUserSubscription, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class DeleteUserSubscription { }
+public class DeleteUserSubscriptionsDto : DeleteUserSubscription, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
+}

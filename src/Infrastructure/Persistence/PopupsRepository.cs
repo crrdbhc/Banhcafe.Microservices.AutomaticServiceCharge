@@ -23,6 +23,8 @@ public class PopupsRepository(
     internal const string QueryCommand = "SP_SEL_POPUPBYID";
     internal const string GetAllCommand = "SP_SELALL_POPUPS";
     internal const string CreateCommand = "SP_INS_POPUP";
+    internal const string UpdateCommand = "SP_UPD_POPUP";
+    internal const string UpdateContentCommand = "SP_UPD_POPUPCONTENT";
 
     public async Task<IEnumerable<PopupsBase>> ListAll (
         ViewAllPopupsDto dto,
@@ -142,5 +144,70 @@ public class PopupsRepository(
         
         var response = await api.Process(logger, request, cancellationToken);
         return response.FirstOrDefault();
+    }
+
+    public async Task<PopupsBase> Update(
+        UpdatePopupsDto dto,
+        CancellationToken cancellationToken
+    )
+    {
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeName,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = UpdateCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
+    }
+
+    public async Task<PopupsBase> Update(
+    UpdatePopupContentDto dto,
+    CancellationToken cancellationToken
+)
+    {
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeName,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = UpdateContentCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
+    }
+
+    public Task<PopupsBase> Delete(DeletePopupsDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
     }
 }

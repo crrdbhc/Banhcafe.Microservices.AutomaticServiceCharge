@@ -2,6 +2,7 @@ using System.Text.Json;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
@@ -26,6 +27,9 @@ public class ServicesRepository (
     internal const string QueryCommand = "SP_SEL_ALLSERVICEDATABYID";
     internal const string GetAllCommand = "SP_SELLALL_SERVICETYPES";
     internal const string CreateCommand = "SP_INS_SERVICETYPE";
+    internal const string UpdateCommand = "SP_UPD_SERVICETYPE";
+    internal const string UpdateServiceSubscriptionCommand = "SP_UPD_SUBSCRIPTIONSERVICES";
+    internal const string UpdateSubscriptionPaymentsCommand = "SP_UPD_SUBSCRIPTIONPAYMENTS";
     // internal const string CreateCommand = "SP_PRUEBAS";
 
     public async Task<IEnumerable<ServicesBase>> ListAll(
@@ -146,5 +150,100 @@ public class ServicesRepository (
 
         var response = await api.Process(logger, request, cancellationToken);
         return response.FirstOrDefault();
+    }
+
+    public async Task<ServicesBase> Update (
+        UpdateServicesDto dto,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeNameServ,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = UpdateCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
+    }
+
+    public async Task<ServicesBase> Update(
+        UpdateServiceSubscriptionsDto dto, 
+        CancellationToken cancellationToken = default
+    )
+    {
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeNameServ,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = UpdateServiceSubscriptionCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
+    }
+
+    public async Task<ServicesBase> Update(
+        UpdateSubscriptionsPaymentsDto dto,
+        CancellationToken cancellationToken
+    )
+    {
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeNameServ,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = UpdateSubscriptionPaymentsCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+        
+        var response = await api.Process(logger, request, cancellationToken );
+        return response.FirstOrDefault();
+    }
+
+    public Task<ServicesBase> Delete(DeleteServicessDto dto = null, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
     }
 }

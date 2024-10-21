@@ -28,3 +28,16 @@ public class ViewUserServicesDto: IBaseQueryDto
 }
 
 public class CreateUserServicesDto {}
+
+public class UpdateUserService { }
+
+public class UpdateUserServicesDto: UpdateUserService, IBaseUpdateDto
+{
+    public int UpdatedId { get; set; }
+}
+
+public class DeleteUserService { }
+public class DeleteUserServicesDto : DeleteUserService, IBaseDeleteDto
+{
+    public int DeletedId { get; set; }
+}
