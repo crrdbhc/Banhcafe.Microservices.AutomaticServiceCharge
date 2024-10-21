@@ -22,6 +22,7 @@ public class PopupsRepository(
 
     internal const string QueryCommand = "SP_SEL_POPUPBYID";
     internal const string GetAllCommand = "SP_SELALL_POPUPS";
+    internal const string CreateCommand = "SP_INS_POPUP";
 
     public async Task<IEnumerable<PopupsBase>> ListAll (
         ViewAllPopupsDto dto,
@@ -113,8 +114,33 @@ public class PopupsRepository(
         return response.FirstOrDefault();
     }
 
-    public Task<PopupsBase> Create(CreatePopupsDto dto = null, CancellationToken cancellationToken = default)
+    public async Task<PopupsBase> Create(
+        CreatePopupsDto dto,
+        CancellationToken cancellationToken = default
+    )
     {
-        throw new NotImplementedException();
+        var request = new SqlDbApiRequest<object>
+        {
+            Scheme = _dbSettings.SchemeName,
+            Database = _dbSettings.DatabaseName,
+            StoredProcedure = CreateCommand,
+            Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
+                JsonSerializer.Serialize(
+                    dto,
+                    options: new()
+                    {
+                        DefaultIgnoreCondition = System
+                            .Text
+                            .Json
+                            .Serialization
+                            .JsonIgnoreCondition
+                            .WhenWritingNull
+                    }
+                )
+            )!,
+        };
+        
+        var response = await api.Process(logger, request, cancellationToken);
+        return response.FirstOrDefault();
     }
 }

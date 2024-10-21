@@ -1,5 +1,7 @@
 using System.Text.Json;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
 using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
@@ -36,10 +38,6 @@ public class ServicesRepository (
             Scheme = _dbSettings.SchemeNameServ,
             Database = _dbSettings.DatabaseName,
             StoredProcedure = GetAllCommand,
-            // Parameters = new Dictionary<string, object>
-            // {
-            //     { "@jsonFile", JsonSerializer.Serialize(dto) }
-            // }
             Parameters = JsonSerializer.Deserialize<Dictionary<string, object>>(
                 JsonSerializer.Serialize(
                     dto,

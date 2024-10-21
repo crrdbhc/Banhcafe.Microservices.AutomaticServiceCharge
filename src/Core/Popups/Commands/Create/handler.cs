@@ -1,36 +1,36 @@
-using AutoMapper;
+﻿using AutoMapper;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.Create
+namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create
 {
-    public sealed class CreatePopupTypeCommand: IRequest<ApiResponse<PopupTypesBase>>
+    public sealed class CreatePopupCommand : IRequest<ApiResponse<PopupsBase>>
     {
-        public CreatePopupType PopupTypes { get; set; }
+        public CreatePopup Popups { get; set; }
     }
 
-    public sealed class CreatePopupTypeCommandHandler (
-        IPopupTypesRepository repository,
+    public sealed class CreatePopupCommandHandler(
+        IPopupsRepository repository,
         IUserContext userContext,
         IMapper mapper,
-        IValidator<CreatePopupType> _validator
-    ) : IRequestHandler<CreatePopupTypeCommand, ApiResponse<PopupTypesBase>>
+        IValidator<CreatePopup> _validator
+    ) : IRequestHandler<CreatePopupCommand, ApiResponse<PopupsBase>>
     {
-        public async Task<ApiResponse<PopupTypesBase>> Handle (
-            CreatePopupTypeCommand request,
+        public async Task<ApiResponse<PopupsBase>> Handle(
+            CreatePopupCommand request,
             CancellationToken cancellationToken
         )
         {
-            var handlerResponse = new ApiResponse<PopupTypesBase>();
+            var handlerResponse = new ApiResponse<PopupsBase>();
 
             var validationResults = await _validator.ValidateAsync(
-                request.PopupTypes,
+                request.Popups,
                 cancellationToken
             );
 
@@ -40,7 +40,7 @@ namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.C
                 return handlerResponse;
             }
 
-            var dto = mapper.Map<CreatePopupTypesDto>(request.PopupTypes);
+            var dto = mapper.Map<CreatePopupsDto>(request.Popups);
             dto.CreatorId = userContext.User.GetUserId();
 
             try
@@ -48,7 +48,7 @@ namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Command.C
                 var results = await repository.Create(dto, cancellationToken);
                 handlerResponse.Data = results;
             }
-            catch(ServiceException ex)
+            catch (ServiceException ex)
             {
                 handlerResponse.AddErrors(ex.Message);
             }

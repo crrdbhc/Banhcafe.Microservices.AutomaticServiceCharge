@@ -119,5 +119,4 @@ public class PopupTypesRepository(
     {
         throw new NotImplementedException();
     }
-
 }

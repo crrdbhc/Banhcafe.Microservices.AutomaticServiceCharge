@@ -14,5 +14,10 @@ namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports
             ViewServicesDto filtersDto,
             CancellationToken cancellationToken
         );
+
+        Task<ServicesBase> Create(
+            CreateServicesDto dto,
+            CancellationToken cancellationToken
+        );
     }
 }

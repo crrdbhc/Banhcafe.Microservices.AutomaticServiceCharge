@@ -14,5 +14,10 @@ namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports
             ViewPopupsDto filtersDto,
             CancellationToken cancellationToken
         );
+
+        Task<PopupsBase> Create(
+            CreatePopupsDto dto,
+            CancellationToken cancellationToken
+        );
     }
 }

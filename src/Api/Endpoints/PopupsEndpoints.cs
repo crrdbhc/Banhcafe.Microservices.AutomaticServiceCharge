@@ -1,5 +1,7 @@
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
 using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -87,6 +89,38 @@ public static class PopupsEndpoints {
             .WithDisplayName("GetPopupById")
             .WithName("GetPopupById")
             .WithMetadata(new FeatureGateAttribute("BOF-show_popup_by_id"))
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+
+        _ = backOfficeEndpoints
+            .MapPost(
+                "/popups",
+                static async (
+                    IFeatureManager manager,
+                    IMediator mediator,
+                    CreatePopupCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok();
+                }
+            )
+            .WithDisplayName("CreatePopup")
+            .WithName("CreatePopup")
+            .WithMetadata(new FeatureGateAttribute("BOF_create_popups"))
+            .Produces<ApiResponse<CreatePopupCommand>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem();

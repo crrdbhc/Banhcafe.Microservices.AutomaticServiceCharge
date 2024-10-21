@@ -1,5 +1,7 @@
 using System.Reflection;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
+using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Validators;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Validators;
 using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
@@ -39,6 +41,7 @@ public static class DependencyInjection
         services.AddScoped<IValidator<HideUserPopup>, HideUserPopupsValidator>();
         services.AddScoped<IValidator<CreatePopupType>, CreatePopupTypesValidator>();
         services.AddScoped<IValidator<CreateServices>, CreateServicesValidator>();
+        services.AddScoped<IValidator<CreatePopup>, CreatePopupsValidator>();
 
         return services;
     }

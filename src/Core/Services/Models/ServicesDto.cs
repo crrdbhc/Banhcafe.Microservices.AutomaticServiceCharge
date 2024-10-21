@@ -68,16 +68,6 @@ public class ServiceData {
     public List<Subscriptions> Subscriptions { get; set; } 
 }
 
-
-
-// public class ServiceData {
-//     public string? Name { get; set; }
-//     public string? Description { get; set; }
-//     public int? PaymentTypeId { get; set; }  
-//     public int? DayLlimit { get; set; }
-//     public string? CollectionTime { get; set; }
-// }
-
 public class CreateServices {
     public ServiceData? JsonFile { get; set; }
 }

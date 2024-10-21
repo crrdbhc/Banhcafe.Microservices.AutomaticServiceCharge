@@ -12,6 +12,7 @@ public class PopupsBase: BaseQueryResponseDto
     public string? PopupContentType { get; set; }
     public string? Content { get; set; }
     public int? OrderContent { get; set; }
+    public string? Response { get; set; }
 }
 
 public class ViewPopupsDto: IBaseQueryDto
@@ -29,4 +30,27 @@ public class ViewAllPopupsDto: IBaseQueryDto
     public int? Size { get; set; }
 }
 
-public class CreatePopupsDto {}
+public class PopupContent
+{
+    public int? PopupContentTypeId { get; set; }
+    public string? Content { get; set; }
+    public int? OrderContent { get; set; }
+}
+
+public class PopupData
+{
+    public string? PopupName { set; get; }
+    public int? PopupTypeId {  set; get; }
+    public bool? IsActive { get; set; }
+    public int? LimitDaysHidden { get; set; }
+    public List<PopupContent> PopupContent { get; set; }
+}
+
+public class CreatePopup {
+    public PopupData? JsonFile { get; set; }
+}
+
+public class CreatePopupsDto: CreatePopup, IBaseCreateDto 
+{
+    public int CreatorId { get; set; }
+}

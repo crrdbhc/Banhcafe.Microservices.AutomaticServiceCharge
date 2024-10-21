@@ -9,14 +9,8 @@
 
   <ItemGroup>
     <Compile Remove="Models\**" />
-    <Compile Remove="Popups\Commands\**" />
-    <Compile Remove="Popups\Validators\**" />
     <EmbeddedResource Remove="Models\**" />
-    <EmbeddedResource Remove="Popups\Commands\**" />
-    <EmbeddedResource Remove="Popups\Validators\**" />
     <None Remove="Models\**" />
-    <None Remove="Popups\Commands\**" />
-    <None Remove="Popups\Validators\**" />
   </ItemGroup>
 
   <ItemGroup>
