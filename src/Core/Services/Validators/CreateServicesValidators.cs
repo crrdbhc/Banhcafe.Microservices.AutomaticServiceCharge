@@ -1,6 +1,6 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
 using FluentValidation;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Validators;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Validators;
 
 public class CreateServicesValidator : AbstractValidator<CreateServices> {}

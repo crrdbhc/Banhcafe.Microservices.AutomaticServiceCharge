@@ -1,14 +1,14 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Create
 {
     public sealed class CreateServiceCommand: IRequest<ApiResponse<ServicesBase>>
     {

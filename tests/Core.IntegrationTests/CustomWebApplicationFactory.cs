@@ -1,12 +1,12 @@
 using System.Linq;
 using System.Security.Claims;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.IntegrationTests;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.IntegrationTests;
 public sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
     protected override void ConfigureWebHost(IWebHostBuilder builder)

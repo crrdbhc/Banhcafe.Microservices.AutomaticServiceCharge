@@ -1,7 +1,7 @@
 using BANHCAFE.Cross.DBConnection;
 using Refit;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Ports;
 public interface ISqlDbConnectionApiExtensions<TRequest, TResponse>
     : ISqlDbConnectionApi<TRequest, TResponse>
 {

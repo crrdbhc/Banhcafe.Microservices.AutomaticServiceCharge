@@ -1,7 +1,7 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Models;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Ports
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Ports
 {   
     public interface ICurrenciesRepository: IGenericRepository<CurrenciesBase, ViewCurrenciesDto, CreateCurrenciesDto, UpdateCurrenciesDto, DeleteCurrenciesDto>
     {

@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Behaviours;
 public class UnhandledExceptionBehaviour<TRequest, TResponse>(ILogger<TRequest> logger)
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

@@ -1,4 +1,4 @@
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common;
 
 public static class DatabaseSettingsInstances
 {

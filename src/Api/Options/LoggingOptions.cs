@@ -8,7 +8,7 @@ using Serilog.Events;
 using Serilog.Formatting.Json;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
 public static class LogginOptions
 {
     public static IHostBuilder AddLoggingOptions(this WebApplicationBuilder builder)
@@ -18,7 +18,7 @@ public static class LogginOptions
             {
                 var elasticSearchUrl = context.Configuration["Serilog:ElasticSearchUrl"]!;
                 var applicationName =
-                    context.Configuration["ApplicationName"] ?? "ServiceChargingSystem";
+                    context.Configuration["ApplicationName"] ?? "AutomaticServiceCharge";
 
                 configuration
                     .Enrich.With<SensitiveContentEnricher>()

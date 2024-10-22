@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Behaviours;
 public class LoggingBehaviour<TRequest, TResponse>(
     ILogger<LoggingBehaviour<TRequest, TResponse>> logger
 ) : IPipelineBehavior<TRequest, TResponse>

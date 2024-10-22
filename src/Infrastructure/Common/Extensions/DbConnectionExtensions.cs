@@ -1,10 +1,10 @@
 using BANHCAFE.Cross.DBConnection;
 using Microsoft.Extensions.Logging;
 using Refit;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Ports;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Extensions;
 
 internal static class DbConnectionExtensions
 {

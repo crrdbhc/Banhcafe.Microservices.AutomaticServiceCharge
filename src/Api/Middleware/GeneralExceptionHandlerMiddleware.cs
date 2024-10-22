@@ -1,7 +1,7 @@
 using System.Text.Json;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Middleware;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Middleware;
 public class GlobalExceptionHandlerMiddleware(
     ILogger<GlobalExceptionHandlerMiddleware> logger,
     RequestDelegate next

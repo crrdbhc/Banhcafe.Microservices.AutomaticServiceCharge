@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
 public static class GeneralExtensions
 {
     public static int GetUserId(this ClaimsPrincipal currentUser)

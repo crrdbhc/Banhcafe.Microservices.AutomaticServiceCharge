@@ -1,4 +1,4 @@
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
 
 public sealed class ApiResponse<TResponse>
 {

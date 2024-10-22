@@ -1,7 +1,7 @@
-﻿using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
+﻿using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Ports
 {
     public interface IUserPopupsRepository: IGenericRepository<UserPopupsBase, ViewUserPopupsDto, HideUserPopupDto, UpdateUserPopupsDto, DeleteUserPopupsDto>
     {

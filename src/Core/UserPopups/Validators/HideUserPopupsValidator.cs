@@ -1,6 +1,6 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
 using FluentValidation;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Validators;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Validators;
 
 public class HideUserPopupsValidator : AbstractValidator<HideUserPopup> {}

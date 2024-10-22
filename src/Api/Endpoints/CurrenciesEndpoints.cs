@@ -1,12 +1,12 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Queries;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.Filters;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints;
 
 public static class CurrenciesEndpoints {
     public static IEndpointRouteBuilder AddCurrenciesEndpoints(this IEndpointRouteBuilder endpoints)

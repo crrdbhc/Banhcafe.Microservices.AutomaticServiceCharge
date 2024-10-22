@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
 public static class SwaggerOptions
 {
     public static IServiceCollection AddSwaggerOptions(this IServiceCollection services)
@@ -67,7 +67,7 @@ public class ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider)
     {
         var info = new OpenApiInfo()
         {
-            Title = "ServiceChargingSystem",
+            Title = "AutomaticServiceCharge",
             Version = description.ApiVersion.ToString(),
             Description = "",
             Contact = new OpenApiContact

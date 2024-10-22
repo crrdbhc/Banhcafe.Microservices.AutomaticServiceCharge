@@ -1,11 +1,11 @@
 using Asp.Versioning;
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints;
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Middleware;
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
-using Banhcafe.Microservices.ServiceChargingSystem.Core;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Middleware;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure;
 using Microsoft.FeatureManagement;
 using Serilog;
 

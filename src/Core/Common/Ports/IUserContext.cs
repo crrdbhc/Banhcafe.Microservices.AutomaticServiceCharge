@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
 /// <summary>
 /// access user claims from JWT
 /// </summary>

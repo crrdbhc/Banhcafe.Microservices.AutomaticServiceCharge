@@ -1,12 +1,12 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Queries;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Queries;
 
 public sealed class ListAllPopupTypesQuery: BaseQuery, IRequest<ApiResponse<IEnumerable<PopupTypesBase>>>
 {

@@ -1,6 +1,6 @@
-﻿using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
+﻿using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Models;
 using FluentValidation;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Validators;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Validators;
 
 public class CreatePopupsValidator : AbstractValidator<CreatePopup> { }

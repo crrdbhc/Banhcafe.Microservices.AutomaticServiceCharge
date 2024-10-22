@@ -1,18 +1,18 @@
 using System.Text.Json;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Update;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Ports;
 using BANHCAFE.Cross.DBConnection;
 using Microsoft.Extensions.Http.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Persistence;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Persistence;
 
 public class ServicesRepository (
     ILogger<ServicesRepository> logger,

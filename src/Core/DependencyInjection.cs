@@ -1,21 +1,21 @@
 using System.Net.Security;
 using System.Reflection;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Behaviours;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Validators;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Validators;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Validators;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Validators;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Validators;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Behaviours;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Validators;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Validators;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Validators;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Validators;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core;
 public static class DependencyInjection
 {
     public static IServiceCollection RegisterCoreServices(this IServiceCollection services)

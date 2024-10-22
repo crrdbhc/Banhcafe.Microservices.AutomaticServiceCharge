@@ -1,4 +1,4 @@
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
 
 public sealed class ServiceException : Exception
 {

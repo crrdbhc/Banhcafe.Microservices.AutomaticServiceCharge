@@ -1,15 +1,15 @@
 ﻿using System.Security.Cryptography;
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
-using Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Command.Create;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Queries;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.Filters;
+using Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Command.Create;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints;
 
 public static class UserPopupsEndpoints
 {

@@ -1,7 +1,7 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Models;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Ports
 {
     public interface IPopupTypesRepository: IGenericRepository<PopupTypesBase, ViewAllPopupTypesDto, CreatePopupTypesDto, UpdatePopupTypesDto, DeletePopupTypesDto>
     {

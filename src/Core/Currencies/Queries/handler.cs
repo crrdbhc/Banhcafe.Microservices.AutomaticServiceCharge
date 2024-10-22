@@ -1,12 +1,12 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Queries;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Queries;
 
 public sealed class ListCurrenciesQuery: BaseQuery, IRequest<ApiResponse<IEnumerable<CurrenciesBase>>>
 {

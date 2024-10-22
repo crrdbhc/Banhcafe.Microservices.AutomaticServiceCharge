@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.CurrenciesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.CurrenciesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddCurrenciesEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/currencies/",
     "HttpMethod": "GET",
@@ -50,7 +50,7 @@
     "EndpointName": "GetCurrencies"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/popups",
     "HttpMethod": "GET",
@@ -100,7 +100,7 @@
     "EndpointName": "GetAllPopups"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_2",
     "RelativePath": "backOffice/popups",
     "HttpMethod": "POST",
@@ -109,7 +109,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create.CreatePopupCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Create.CreatePopupCommand",
         "IsRequired": true
       },
       {
@@ -120,7 +120,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -147,7 +147,7 @@
     "EndpointName": "CreatePopup"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_3",
     "RelativePath": "backOffice/popups",
     "HttpMethod": "PUT",
@@ -156,7 +156,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Update.UpdatePopupsCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Update.UpdatePopupsCommand",
         "IsRequired": true
       },
       {
@@ -167,7 +167,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -194,7 +194,7 @@
     "EndpointName": "UpdatePopup"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/popups/{popupId}",
     "HttpMethod": "GET",
@@ -249,7 +249,7 @@
     "EndpointName": "GetPopupById"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupsEndpoints\u003Eb__0_4",
     "RelativePath": "backOffice/popups/content",
     "HttpMethod": "PUT",
@@ -258,7 +258,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Update.UpdatePopupContentCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Update.UpdatePopupContentCommand",
         "IsRequired": true
       },
       {
@@ -269,7 +269,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Create.CreatePopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -296,7 +296,7 @@
     "EndpointName": "UpdatePopupContent"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserPopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.UserPopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddUserPopupsEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/popups/hide",
     "HttpMethod": "POST",
@@ -305,7 +305,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Command.Create.HideUserPopupCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Command.Create.HideUserPopupCommand",
         "IsRequired": true
       },
       {
@@ -316,7 +316,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Command.Create.HideUserPopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Command.Create.HideUserPopupCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -343,7 +343,7 @@
     "EndpointName": "HideUserPopup"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupTypesEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/popups/types",
     "HttpMethod": "GET",
@@ -393,7 +393,7 @@
     "EndpointName": "GetAllPopupTypes"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupTypesEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/popups/types",
     "HttpMethod": "POST",
@@ -402,7 +402,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand",
         "IsRequired": true
       },
       {
@@ -413,7 +413,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -440,7 +440,7 @@
     "EndpointName": "CreatePopupTypes"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.PopupTypesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddPopupTypesEndpoints\u003Eb__0_2",
     "RelativePath": "backOffice/popups/types",
     "HttpMethod": "PUT",
@@ -449,7 +449,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Update.UpdatePopupTypesCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Commands.Update.UpdatePopupTypesCommand",
         "IsRequired": true
       },
       {
@@ -460,7 +460,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Commands.Create.CreatePopupTypeCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -487,7 +487,7 @@
     "EndpointName": "UpdatePopupType"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.RenewalTypesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.RenewalTypesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddRenewalTypesEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/RenewalTypes/",
     "HttpMethod": "GET",
@@ -537,7 +537,7 @@
     "EndpointName": "GetRenewalTypes"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/services",
     "HttpMethod": "GET",
@@ -587,7 +587,7 @@
     "EndpointName": "GetAllServices"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_2",
     "RelativePath": "backOffice/services",
     "HttpMethod": "POST",
@@ -596,7 +596,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Create.CreateServiceCommand",
         "IsRequired": true
       },
       {
@@ -607,7 +607,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -634,7 +634,7 @@
     "EndpointName": "CreateServices"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_3",
     "RelativePath": "backOffice/services",
     "HttpMethod": "PUT",
@@ -643,7 +643,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update.UpdateServicesCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Update.UpdateServicesCommand",
         "IsRequired": true
       },
       {
@@ -654,7 +654,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -681,7 +681,7 @@
     "EndpointName": "UpdateService"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/services/{serviceId}",
     "HttpMethod": "GET",
@@ -736,7 +736,7 @@
     "EndpointName": "GetServiceById"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_4",
     "RelativePath": "backOffice/services/subscriptions",
     "HttpMethod": "PUT",
@@ -745,7 +745,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update.UpdateServicesSubscriptionsCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Update.UpdateServicesSubscriptionsCommand",
         "IsRequired": true
       },
       {
@@ -756,7 +756,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -783,7 +783,7 @@
     "EndpointName": "UpdateServiceSubscriptions"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.ServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddServicesEndpoints\u003Eb__0_5",
     "RelativePath": "backOffice/services/subscriptions/payments",
     "HttpMethod": "PUT",
@@ -792,7 +792,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Update.UpdateSubscriptionPaymentsCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Update.UpdateSubscriptionPaymentsCommand",
         "IsRequired": true
       },
       {
@@ -803,7 +803,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Commands.Create.CreateServiceCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -830,7 +830,7 @@
     "EndpointName": "UpdateSubscriptionPayments"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserSubscriptionsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.UserSubscriptionsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddUserSubscriptionsEndpoints\u003Eb__0_1",
     "RelativePath": "backOffice/subscriptions",
     "HttpMethod": "POST",
@@ -839,7 +839,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Commands.Create.CreateUserSubscriptionCommand",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Commands.Create.CreateUserSubscriptionCommand",
         "IsRequired": true
       },
       {
@@ -850,7 +850,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Commands.Create.CreateUserSubscriptionCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Commands.Create.CreateUserSubscriptionCommand, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -877,7 +877,7 @@
     "EndpointName": "PostUserSubscriptions"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserPopupsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.UserPopupsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddUserPopupsEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/users/{coreClientId}/popups/",
     "HttpMethod": "GET",
@@ -912,7 +912,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Queries.ListUserPopupsQuery, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response.ApiResponse\u00601[[Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Queries.ListUserPopupsQuery, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -939,7 +939,7 @@
     "EndpointName": "UserPopups"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserServicesEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.UserServicesEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddUserServicesEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/users/{coreClientId}/services/{serviceId}",
     "HttpMethod": "GET",
@@ -999,7 +999,7 @@
     "EndpointName": "GetSubscriptionsByService"
   },
   {
-    "ContainingType": "Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.UserSubscriptionsEndpoints\u002B\u003C\u003Ec",
+    "ContainingType": "Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.UserSubscriptionsEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CAddUserSubscriptionsEndpoints\u003Eb__0_0",
     "RelativePath": "backOffice/users/{coreClientId}/subscriptions",
     "HttpMethod": "GET",

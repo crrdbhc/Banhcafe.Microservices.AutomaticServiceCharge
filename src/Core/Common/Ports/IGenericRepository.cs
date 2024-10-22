@@ -1,4 +1,4 @@
-﻿namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
+﻿namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
 public interface IGenericRepository<TResponse, TFilterRequest, TCreateRequest, TUpdateRequest, TDeleteRequest>
 {
     Task<IEnumerable<TResponse>> List(

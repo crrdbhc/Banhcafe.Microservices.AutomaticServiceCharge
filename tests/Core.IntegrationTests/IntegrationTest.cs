@@ -2,7 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.IntegrationTests;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.IntegrationTests;
 public partial class IntegrationTest
 {
     private static IServiceScopeFactory _scopeFactory = null!;

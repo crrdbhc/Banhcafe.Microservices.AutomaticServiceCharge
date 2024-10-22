@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Commands.Update
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Commands.Update
 {
     public sealed class UpdatePopupsCommand : IRequest<ApiResponse<PopupsBase>>
     {

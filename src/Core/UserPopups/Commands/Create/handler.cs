@@ -1,14 +1,14 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Command.Create 
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Command.Create 
 {
     public sealed class HideUserPopupCommand: IRequest<ApiResponse<UserPopupsBase>>
     {

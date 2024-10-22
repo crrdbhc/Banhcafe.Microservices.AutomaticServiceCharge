@@ -1,12 +1,12 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Queries;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Queries;
 
 public sealed class ListRenewalTypesQuery: BaseQuery, IRequest<ApiResponse<IEnumerable<RenewalTypesBase>>>
 {

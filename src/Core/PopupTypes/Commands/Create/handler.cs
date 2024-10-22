@@ -1,14 +1,14 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Commands.Create
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Commands.Create
 {
     public sealed class CreatePopupTypeCommand: IRequest<ApiResponse<PopupTypesBase>>
     {

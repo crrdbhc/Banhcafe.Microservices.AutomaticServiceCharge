@@ -1,8 +1,8 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Queries;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Queries;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Mapper;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Mapper;
 
 public sealed class AutoMapperProfile: Profile
 {

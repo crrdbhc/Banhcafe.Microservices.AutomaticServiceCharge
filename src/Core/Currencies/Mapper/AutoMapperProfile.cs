@@ -1,8 +1,8 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Queries;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Queries;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Mapper;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Mapper;
 
 public sealed class AutoMapperProfile: Profile
 {

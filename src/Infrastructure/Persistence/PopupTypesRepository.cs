@@ -1,14 +1,14 @@
 using System.Text.Json;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Ports;
 using BANHCAFE.Cross.DBConnection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Persistence;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Persistence;
 
 public class PopupTypesRepository(
     ILogger<PopupTypesRepository> logger,

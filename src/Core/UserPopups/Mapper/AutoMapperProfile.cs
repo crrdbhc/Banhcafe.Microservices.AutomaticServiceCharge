@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Queries;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Queries;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Mapper;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Mapper;
 public sealed class AutoMapperProfile: Profile
 {
     public AutoMapperProfile() 

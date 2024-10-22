@@ -2,7 +2,7 @@ using OpenTelemetry.Exporter;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
 public static class TracingOptions
 {
     public static IServiceCollection AddTracingOptions(
@@ -10,7 +10,7 @@ public static class TracingOptions
         IConfiguration configuration
     )
     {
-        var applicationName = "ServiceChargingSystem";
+        var applicationName = "AutomaticServiceCharge";
         var applicationVersion = configuration["ApplicationVersion"] ?? "1";
 
         services

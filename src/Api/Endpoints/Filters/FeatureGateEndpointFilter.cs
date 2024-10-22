@@ -2,7 +2,7 @@ using System.Net;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Endpoints.Filters;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Endpoints.Filters;
 public class FeatureGateEndpointFilter(IFeatureManager featureManager) : IEndpointFilter
 {
     public async ValueTask<object?> InvokeAsync(

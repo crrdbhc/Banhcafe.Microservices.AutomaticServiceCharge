@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Queries;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Queries;
 public sealed class ListUserPopupsQuery: BaseQuery, IRequest<ApiResponse<IEnumerable<UserPopupsBase>>>
 {
     public int? CoreClientId { get; set; }

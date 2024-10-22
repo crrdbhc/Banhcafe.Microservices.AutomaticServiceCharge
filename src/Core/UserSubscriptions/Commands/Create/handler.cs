@@ -1,14 +1,14 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Exceptions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Exceptions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Commands.Create
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Commands.Create
 {
     public sealed class CreateUserSubscriptionCommand: IRequest<ApiResponse<UserSubscriptionsBase>>
     {

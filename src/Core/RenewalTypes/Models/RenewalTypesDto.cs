@@ -1,6 +1,6 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Models;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Models;
 
 public class RenewalTypesBase: BaseQueryResponseDto
 {

@@ -1,7 +1,7 @@
 using System.Security.Claims;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
 public class UserContext : IUserContext
 {
     public UserContext(IHttpContextAccessor httpContextAccessor)

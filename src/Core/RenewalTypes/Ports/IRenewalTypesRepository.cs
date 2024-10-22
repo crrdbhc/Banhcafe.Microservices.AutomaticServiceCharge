@@ -1,7 +1,7 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Models;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Ports
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Ports
 {   
     public interface IRenewalTypesRepository: IGenericRepository<RenewalTypesBase, ViewRenewalTypesDto, CreateRenewalTypesDto, UpdateRenewalTypesDto, DeleteRenewalTypesDto>
     {

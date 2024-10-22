@@ -1,7 +1,7 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Models;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Ports
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Ports
 {
     public interface IUserSubscriptionsRepository: IGenericRepository<UserSubscriptionsBase, ViewUserSubscriptionsDto, CreateUserSubscriptionsDto, UpdateUserSubscriptionsDto, DeleteUserSubscriptionsDto>
     {

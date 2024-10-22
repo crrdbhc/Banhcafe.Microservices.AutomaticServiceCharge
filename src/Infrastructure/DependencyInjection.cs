@@ -1,24 +1,24 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Currencies.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Popups.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.PopupTypes.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.RenewalTypes.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserSubscriptions.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Infrastructure.Persistence;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Currencies.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Popups.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.PopupTypes.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.RenewalTypes.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserServices.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserServices.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserSubscriptions.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Http.Resilience;
@@ -27,7 +27,7 @@ using Polly;
 using Polly.Timeout;
 using Refit;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Infrastructure;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Infrastructure;
 public static class DependencyInjection
 {
     public static IServiceCollection RegisterInfrastructureServices(

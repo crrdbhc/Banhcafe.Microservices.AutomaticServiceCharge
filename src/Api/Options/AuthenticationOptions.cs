@@ -1,10 +1,10 @@
 using System.Text;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Api.Options;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Api.Options;
 public static class AuthenticationPolicy
 {
     public const string BackOffice = "BackOffice";

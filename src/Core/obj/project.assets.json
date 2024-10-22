@@ -466,11 +466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\300013\\source\\repos\\Banhcafe.Microservices.ServiceChargingSystem\\src\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\300013\\source\\repos\\Banhcafe.Microservices.AutomaticServiceCharge\\src\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\300013\\source\\repos\\Banhcafe.Microservices.ServiceChargingSystem\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\300013\\source\\repos\\Banhcafe.Microservices.AutomaticServiceCharge\\src\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\300013\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\300013\\source\\repos\\Banhcafe.Microservices.ServiceChargingSystem\\src\\Core\\obj\\",
+      "outputPath": "C:\\Users\\300013\\source\\repos\\Banhcafe.Microservices.AutomaticServiceCharge\\src\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

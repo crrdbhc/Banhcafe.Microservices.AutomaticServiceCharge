@@ -1,8 +1,8 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Queries;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Queries;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Mapper;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Mapper;
 
 public sealed class AutoMapperProfile: Profile
 {

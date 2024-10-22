@@ -1,11 +1,11 @@
 version: '3.8'
 services:
-  ServiceChargingSystem:
+  AutomaticServiceCharge:
     build:
-      context: ./Banhcafe.Microservices.ServiceChargingSystem
+      context: ./Banhcafe.Microservices.AutomaticServiceCharge
       dockerfile: src/Api/Dockerfile
-    image: ServiceChargingSystem
-    container_name: ServiceChargingSystem
+    image: AutomaticServiceCharge
+    container_name: AutomaticServiceCharge
     environment:
       ASPNETCORE_ENVIRONMENT: development
     ports:

@@ -1,6 +1,6 @@
-﻿using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+﻿using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserPopups.Models;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserPopups.Models;
 
 public class UserPopupsBase: BaseQueryResponseDto
 {

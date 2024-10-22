@@ -1,7 +1,7 @@
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
 using MediatR.NotificationPublishers;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.Services.Models;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.Services.Models;
 
 public class ServicesBase: BaseQueryResponseDto
 {

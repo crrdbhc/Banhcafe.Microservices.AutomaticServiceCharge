@@ -1,12 +1,12 @@
 using AutoMapper;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Extensions;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.Common.Ports;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Models;
-using Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Extensions;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.Common.Ports;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserServices.Models;
+using Banhcafe.Microservices.AutomaticServiceCharge.Core.UserServices.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.ServiceChargingSystem.Core.UserServices.Queries;
+namespace Banhcafe.Microservices.AutomaticServiceCharge.Core.UserServices.Queries;
 
 public sealed class ListUserServicesQuery: BaseQuery, IRequest<ApiResponse<IEnumerable<UserServicesBase>>>
 {
